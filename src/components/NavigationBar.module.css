@@ -1,0 +1,9 @@
+.active{
+    border-bottom: 2px solid white;
+}
+.activeCart{
+    border: 1px solid white;
+}
+.links li:hover{
+    border-bottom: 1px solid rgb(161, 161, 161);
+}

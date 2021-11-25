@@ -1,0 +1,10 @@
+@media only screen and (max-width: 767px) {
+    .listing{
+        padding-left: 8vw;
+     
+    }
+    
+}
+.showmore{
+    margin-bottom: 10vh;
+}

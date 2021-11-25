@@ -1,0 +1,21 @@
+.tagline{
+    text-align: center;
+    padding-top: 10vh;
+    
+}
+.searchinput{
+    display: block;
+    margin-left: 30vw;
+    width: 40vw;
+    margin-top: 5vh;
+    
+}
+.searchBack{
+    padding-bottom: 4vh;
+}
+@media only screen and (max-width:767px){
+    .tagline{
+        font-size: 1.5em;
+        margin-inline:2em;
+    }
+}

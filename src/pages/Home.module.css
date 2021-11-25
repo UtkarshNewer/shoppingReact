@@ -1,0 +1,13 @@
+.title{
+    position: absolute;
+    top:15vh;
+    left: 10vw;
+    
+}
+.title> a{
+    text-decoration: none;
+    color: black;
+}
+.title> a:hover{
+    color: rgb(189, 189, 189);
+}

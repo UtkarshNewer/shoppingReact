@@ -1,0 +1,31 @@
+.inputField{
+    width: 98%;
+    padding-inline: 1rem;
+    margin-inline-end: 1rem;
+    margin-bottom: 0.5rem;
+}
+.inputFieldFull{
+    width: 98%;
+    padding-inline:1rem;
+    margin-bottom: 0.5rem;
+}
+.inputFieldBlur{
+    width: 98%;
+    padding-inline: 1rem;
+    margin-inline-end: 1rem;
+    margin-bottom: 0.5rem;
+    border: 2px solid red;
+    border-radius: 4px;
+    background-color: rgb(241, 223, 223);
+}
+
+.selectedRadio{
+    color: rgb(216, 216, 216);
+   
+}
+.selected p{
+    color: rgb(119, 119, 119);
+}
+.selectedRadio input[type="radio"]:checked +label{
+    color: blue;
+}

@@ -1,0 +1,24 @@
+.OrderNav {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.paymentNavItem {
+  text-decoration: none;
+
+  color: rgb(216, 216, 216);
+}
+
+.activeCartNav {
+  color: blue;
+  border-bottom: 4px solid rgb(219, 219, 219);
+}
+
+.normalLink{
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+@media only screen and (max-width:767px) {
+    .paymentNavItem{
+        font-size: 0.6em;
+    }
+}

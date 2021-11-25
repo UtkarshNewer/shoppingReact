@@ -1,0 +1,13 @@
+.wrongInput{
+    background-color: rgb(250, 223, 223);
+    border:2px solid red;
+}
+.radioSelect +label{
+    color: rgb(209, 209, 209);
+}
+.radioSelect[type="radio"]:checked +label{
+    color: black;
+}
+.shippingDetails{
+    margin-bottom: 15vh;
+}

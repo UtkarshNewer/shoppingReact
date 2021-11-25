@@ -208,7 +208,7 @@ export default function ShippingFormDetails(props) {
         <input
           className={classes.inputFieldFull}
           type="text"
-          placeholder="Address 2(Optional)"
+          placeholder="Address 2"
           ref={additionalAddress}
         />
         <div>

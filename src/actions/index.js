@@ -7,7 +7,7 @@ export const FetchProductsSuccess = (info) => ({
   info,
 });
 export const FetchProductsFailed = (error) => ({
-  type: "FETCH_PRODUCTS_SUCCESS",
+  type: "FETCH_PRODUCTS_FAILED",
   error,
 });
 export const FetchProducts = () => (dispatch) => {
@@ -106,3 +106,18 @@ export const emptyCart=()=>(dispatch)=>{
   dispatch({type: "ERROR_MODAL_CLOSE"});
   console.log("here2");
 }
+
+export const finalOrderDetails=(items)=>({
+  type:"ADD_ORDER_ITEM_DETAILS",
+  items
+})
+
+export const finalShippingDetails=(details)=>({
+  type:"ADD_SHIPPING_DETAILS",
+  details
+})
+
+export const finalPaymentDetails=(payment)=>({
+  type:"ADD_PAYMENT_DETAILS",
+  payment
+})

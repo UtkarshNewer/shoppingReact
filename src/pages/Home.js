@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <NavigationBar />
       <img className="w-100 h-25" src={homeImage} alt="home"/>
-      <h3 className={classes.title}><NavLink to="/shop">Go to Shopping page</NavLink></h3>
+      <h3 className={classes.title}><NavLink id="click-me" to="/shop">Go to Shopping page</NavLink></h3>
       <BottomNav/>
     </>
   );

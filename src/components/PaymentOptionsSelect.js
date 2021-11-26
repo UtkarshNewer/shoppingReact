@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
+import { connect } from "react-redux";
 import { useHistory } from "react-router";
+import { finalPaymentDetails } from "../actions";
 import classes from "./PaymentOptionsSelect.module.css";
 
-export default function PaymentOptionsSelect(props) {
+function PaymentOptionsSelect(props) {
   const history = useHistory();
   const today = new Date();
   const mm = today.getMonth();
   const yy = today.getFullYear();
-  console.log(mm, yy);
+  // console.log(mm, yy);
   const cardInputRef = useRef();
   const monthInputRef = useRef();
   const cvvRef = useRef();
@@ -63,6 +65,7 @@ export default function PaymentOptionsSelect(props) {
   };
   const submitHandler = () => {
     history.push({pathname:"/place-order",state:{orderDetails:props.orderDetails,paymentDetails:paymentDetails}})
+    props.finalPaymentDetails(paymentDetails);
   };
 
   useEffect(() => {
@@ -197,3 +200,12 @@ export default function PaymentOptionsSelect(props) {
     </div>
   );
 }
+
+const mapStateToProps=state=>{
+  return state;
+}
+const mapDispatchToProps={
+  finalPaymentDetails:finalPaymentDetails
+}
+const PaymentOptionsSelectContainer=connect(mapStateToProps,mapDispatchToProps)(PaymentOptionsSelect);
+export default PaymentOptionsSelectContainer

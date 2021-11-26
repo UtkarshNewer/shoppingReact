@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router";
-import { addOrderItems, ErrorModal } from "../actions";
+import { addOrderItems, ErrorModal, finalOrderDetails } from "../actions";
 import CartItem from "../components/CartItem";
 import Summary from "../components/Summary";
 import classes from "./ShoppingDetails.module.css";
@@ -34,15 +34,17 @@ function ShoppingDetails(props) {
     
   }, [props.cartReducer.cartItems,props.orderReducer.count]);
   const getTotalAmount=(cost)=>{
-    console.log(cost);
+    // console.log(cost);
     setFinalAmount(cost);
-    console.log(props);
+    // console.log(props);
   }
   const CloseModal=()=>{
     setCancelCart(false);
   }
   const ConfirmOrderHandler = () => {
       history.push({pathname:'/order-details',state:{cost:finalAmount,items:props.cartReducer.cartItems}})
+      props.finalOrderDetails({cost:finalAmount,items:props.cartReducer.cartItems});
+
     };
   return (
     <div className={`mx-2 row`}>
@@ -81,7 +83,8 @@ const mapStateToProps = function (state) {
 };
 const mapDispatchToProps = {
   addOrderItems: addOrderItems,
-  errorModal:ErrorModal
+  errorModal:ErrorModal,
+  finalOrderDetails:finalOrderDetails,
 };
 const ShoppingDetailsContainer = connect(
   mapStateToProps,

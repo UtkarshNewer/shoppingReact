@@ -3,13 +3,13 @@ import SummaryItems from "./SummaryItems";
 import classes from './SummaryShipping.module.css'
 
 export default function SummaryShipping(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div className={`card p-1 pt-2 mt-4 mt-lg-0  ms-2 ms-lg-0 w-lg-100 ${classes.summaryCard}`}>
         <h3>Summary</h3>
       <div className="pt-3 border-top">
         {props.orderDetails.items.map((item) => (
-          <SummaryItems item={item} />
+          <SummaryItems item={item} key={`${item.id}${item.size}`} />
         ))}
       </div>
       <div className="d-flex justify-content-between">

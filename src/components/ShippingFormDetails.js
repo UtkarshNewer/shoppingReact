@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import { connect } from "react-redux";
 import { useHistory } from "react-router";
+import { finalShippingDetails } from "../actions";
 import classes from "./ShippingFormDetails.module.css";
 import SummaryShipping from "./SummaryShipping";
 
-export default function ShippingFormDetails(props) {
+function ShippingFormDetails(props) {
   // console.log(props);
   const [invalidInput, setInvalidInput] = useState(false);
   const [blurfirstName, setBlurFirstName] = useState(false);
@@ -108,6 +110,7 @@ export default function ShippingFormDetails(props) {
       pathname: "/payment",
       state: { items: props.orderDetails, shippingDetails: shippingDetals,shippingFee:selected },
     });
+    props.finalShippingDetails({shippingDetals:shippingDetals,shippingFee:selected})
   };
   useEffect(() => {
     setShipppingDetails({
@@ -574,3 +577,13 @@ export default function ShippingFormDetails(props) {
     </div>
   );
 }
+
+const mapStateToProps=state=>{
+  return state;
+}
+const mapDispatchToProps={
+  finalShippingDetails:finalShippingDetails
+}
+
+const ShippingFormDetailsContainer=connect(mapStateToProps,mapDispatchToProps)(ShippingFormDetails);
+export default ShippingFormDetailsContainer

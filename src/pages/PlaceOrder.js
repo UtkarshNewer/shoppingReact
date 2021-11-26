@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router";
 import BottomNav from "../components/BottomNav";
 import NavigationBarContainer from "../components/NavigationBar";
+import classes from './PlaceOrder.module.css'
 
-export default function PlaceOrder() {
+function PlaceOrder() {
   const location = useLocation();
   console.log(location.state);
   const history=useHistory();
@@ -12,7 +14,7 @@ export default function PlaceOrder() {
       const { title, size, price, quantity, id } = item;
       //   console.log(title);
       return (
-        <tr key={id}>
+        <tr key={`${id}${size}`}>
           <td className="border px-2">{id}</td>
           <td className="border px-2">{title}</td>
           <td className="border px-2">{size}</td>
@@ -41,7 +43,7 @@ export default function PlaceOrder() {
   return (
     <>
       <NavigationBarContainer />
-      <div className="d-block mt-5  text-center">
+      <div className={`d-block mt-5  text-center ${classes.order}`}>
         <h3>Your order has been Placed</h3>
         <p>
           Integer consectetur nisi id turpis consequat rhoncus. Quisque dolor
@@ -93,3 +95,8 @@ export default function PlaceOrder() {
     </>
   );
 }
+const mapStateToProps=state=>{
+  return state.finalInfoReducer;
+}
+const PlaceOrderContainer=connect(mapStateToProps)(PlaceOrder);
+export default PlaceOrderContainer;

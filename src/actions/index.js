@@ -76,7 +76,7 @@ export const filterCartItems = (item) => (dispatch) => {
   // console.log(item.size);
   store
     .getState()
-    .cartReducer.cartItems.forEach((cartItem) =>{
+    .cartReducer.cartItems.map((cartItem) =>{
         if(cartItem.title === item.title && cartItem.size === item.size){
             console.log(cartItem);
             dispatch(removeItem(cartItem))
